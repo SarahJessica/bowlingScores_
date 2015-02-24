@@ -4,12 +4,7 @@
 <meta charset="UTF-8">
 <title>Print out of scores!</title>
 
-<style>
-	table, th, td {
-		border:black 1px solid;
-		margin: 20px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
@@ -88,7 +83,7 @@ $p6 = array($_GET['p6'],
 ?>
 
 
-<table>
+<table id="results">
 <tr>
 	<th rowspan="2">Player</th>
     <th colspan="21">Frame</th>
@@ -122,7 +117,11 @@ if ($p6[1][0] != null) { calcScores($p6); }
 function calcScores($array){
 
 $runningTotal = array();
-$grandTotal = 0;
+$grandTotal = 0;  
+/* 
+maybe $grandTotal is superfluous now $displayTotal is used and all calculations including this can be removed. 
+*/
+$displayTotal = 0;
 	
 	echo "<tr>";
 		echo "<td rowspan=\"2\">" . $array[0] . "</td>";
@@ -199,11 +198,13 @@ $grandTotal = 0;
 	
 	//frame scores
 	echo "<tr>";
-		
+			
 		for($j = 1; $j < 10; $j++){
-			echo "<td colspan=\"2\">" . $runningTotal[$j] . "</td>";
+			$displayTotal += $runningTotal[$j];
+			echo "<td colspan=\"2\">" . $displayTotal . "</td>";
 		}
-		echo "<td colspan=\"3\">" . $runningTotal[10] . "</td>";
+		$displayTotal += $runningTotal[10];
+		echo "<td colspan=\"3\">" . $displayTotal . "</td>";
 	echo "</tr>";
 	
 }// end of calcScores

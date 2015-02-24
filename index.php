@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Calculate Your Bowling Scores</title>
+
+
+<link rel="stylesheet" type="text/css" href="main.css">
+
 </head>
 
 <body>
-<form method="get" action="scores.php">
+<div id="wrapper">
+<form method="get" action="scores.php" id="input">
 	<table>
 		<tr>
         	<th></th>
@@ -18,13 +23,13 @@
             <th colspan="3">Player 6</th>
         </tr>
         <tr>
-        	<td></td>
-        	<td colspan="3"><input type="text" name="p1"></td>
-            <td colspan="3"><input type="text" name="p2"></td>
-            <td colspan="3"><input type="text" name="p3"></td>
-            <td colspan="3"><input type="text" name="p4"></td>
-            <td colspan="3"><input type="text" name="p5"></td>
-            <td colspan="3"><input type="text" name="p6"></td>
+        	<th></th>
+        	<td colspan="3"><input type="text" name="p1" placeholder="name"></td>
+            <td colspan="3"><input type="text" name="p2" placeholder="name"></td>
+            <td colspan="3"><input type="text" name="p3" placeholder="name"></td>
+            <td colspan="3"><input type="text" name="p4" placeholder="name"></td>
+            <td colspan="3"><input type="text" name="p5" placeholder="name"></td>
+            <td colspan="3"><input type="text" name="p6" placeholder="name"></td>
         </tr>
         <tr>
         	<th>Frame 1</th>
@@ -186,5 +191,6 @@
 	</table>
 	<input type="submit">
 </form>
+</div>
 </body>
 </html>
